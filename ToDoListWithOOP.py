@@ -5,7 +5,7 @@ class Item:
         self.status = status
 
     def display_items(self):
-        if self.status==True:
+        if self.status == True:
             symbol = "\u2714"
 
         else:
