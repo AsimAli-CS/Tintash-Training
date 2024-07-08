@@ -29,10 +29,10 @@ class ToDoList:
             item.display_items()
         print("-" * 40)
 
-     def remove_item(self, id):
-            removed_item = self.items.pop(id, None)
-            if removed_item is None:
-                print(f"Item with id {id} not found.")
+    def remove_item(self, id):
+        removed_item = self.items.pop(id, None)
+        if removed_item is None:
+            print(f"Item with id {id} not found.")
                 
     def update_item(self, id, **kwargs):
         if id in self.items:
@@ -114,7 +114,7 @@ while execute!=6:
             status=check_status()
             item=Item(id,task,status)
             todo_list.add_item(id,item)
-            print("Do you want to add more items y/n: ")
+            print("Do you want to add more items y/n: ",end="")
             check=input()
             a = 0 if check == "y" else -1
         print("Tasks in ToDoList")
@@ -128,7 +128,7 @@ while execute!=6:
 
     if selected_input==3:
         id=check_id("Enter the id of the task you want to remove: ")
-        todo_list.remeove_item(id)
+        todo_list.remove_item(id)
         print("Tasks in ToDoList")
         todo_list.display_list()
 
