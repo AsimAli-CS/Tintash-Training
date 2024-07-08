@@ -29,12 +29,11 @@ class ToDoList:
             item.display_items()
         print("-" * 40)
 
-    def remeove_item(self, id):
-        if id in self.items:
-            self.items.pop(id)
-        else:
-            print(f"Item with id {id} not found.")
-
+     def remove_item(self, id):
+            removed_item = self.items.pop(id, None)
+            if removed_item is None:
+                print(f"Item with id {id} not found.")
+                
     def update_item(self, id, **kwargs):
         if id in self.items:
             if 'name' in kwargs:
